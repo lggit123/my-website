@@ -1,4 +1,4 @@
-baseURL = "https://vermillion-boba-d5654c.netlify.app/"
+baseURL = "http://localhost:1313/"
 languageCode = "en-us"
 title = "My New Hugo Site"
 theme = "learn"  # 确保主题名称正确
