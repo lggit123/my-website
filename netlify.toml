@@ -10,19 +10,19 @@
 [[headers]]
   for = "/*"
   [headers.values]
-    Access-Control-Allow-Origin = "*"
+    # 明确指定允许的域名，而不是使用 "*"
+    Access-Control-Allow-Origin = "https://yourwebsite.com" 
     Content-Security-Policy = """
       default-src 'self';
-      script-src 'self' 'unsafe-inline' https://unpkg.com https://m.stripe.network 'sha256-/5Guo2nzv5n/w6ukZpOBZOtTJBJPSkJ6mhHpnBgm3Ls=';
-      style-src 'self' 'unsafe-inline' https://m.stripe.network;
+      script-src 'self' https://unpkg.com https://m.stripe.network 'sha256-/5Guo2nzv5n/w6ukZpOBZOtTJBJPSkJ6mhHpnBgm3Ls=' https://realtime.ably.io; 
+      style-src 'self' https://m.stripe.network;
       connect-src 'self' https://realtime.ably.io;
       img-src 'self' data:;
       font-src 'self';
       frame-src 'self';
       media-src 'self';
       object-src 'none';
-      report-uri /csp-violation-report-endpoint/;
-      Content-Security-Policy = "default-src 'self'; script-src 'self' 'unsafe-inline' https://m.stripe.network 'sha256-/5Guo2nzv5n/w6ukZpOBZOtTJBJPSkJ6mhHpnBgm3Ls='; style-src 'self' 'unsafe-inline' https://m.stripe.network";
+      # report-uri https://your-csp-report-endpoint.com/; # 替换为实际的端点
     """
 
 [[redirects]]
