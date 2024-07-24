@@ -3,7 +3,7 @@
   command = "hugo"
 
 [context.production.environment]
-  HUGO_VERSION = "0.79.0"
+  HUGO_VERSION = "0.129.0"
   HUGO_ENV = "production"
   HUGO_ENABLEGITINFO = "true"
 
@@ -16,10 +16,3 @@
   for = "/*"
   [headers.values]
     Access-Control-Allow-Origin = "*"
-
-[template]
-  name = "netlify-cms"
-  contributors = ["Netlify"]
-
-[[plugins]]
-  package = "@netlify/plugin-gatsby-cache"
