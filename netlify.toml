@@ -21,6 +21,7 @@
       frame-src 'self';
       media-src 'self';
       object-src 'none';
+      report-uri /csp-violation-report-endpoint/;
     """
 
 [[redirects]]
