@@ -7,12 +7,23 @@
   HUGO_ENV = "production"
   HUGO_ENABLEGITINFO = "true"
 
-[[redirects]]
-  from = "/admin"
-  to = "/admin/"
-  status = 200
-
 [[headers]]
   for = "/*"
   [headers.values]
     Access-Control-Allow-Origin = "*"
+    Content-Security-Policy = """
+      default-src 'self';
+      script-src 'self' 'unsafe-inline' https://unpkg.com https://m.stripe.network;
+      style-src 'self' 'unsafe-inline' https://m.stripe.network;
+      connect-src 'self' https://realtime.ably.io;
+      img-src 'self' data:;
+      font-src 'self';
+      frame-src 'self';
+      media-src 'self';
+      object-src 'none';
+    """
+
+[[redirects]]
+  from = "/admin"
+  to = "/admin/"
+  status = 200
